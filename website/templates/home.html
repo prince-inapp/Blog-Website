@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+  {% for post in posts %}
+    <div class="card">
+      <div class="card-content" id = "card{{ post.id }}">
+        <span class="card-title">{{ post.user.email }}</span>
+        <p>{{ post.text }}</p>
+      </div>
+      <div class="card-action">
+        <a href="/post/{{ post.id }}">See more</a>
+      </div>
+    </div>
+    <br>
+  {% endfor %}
+{% endblock %}
